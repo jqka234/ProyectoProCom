@@ -5,3 +5,5 @@ El programa va a obtener sus efectos secundarios desde la API de la FDA y mostra
 Juan Camilo Nuñez Becerra: Se encargo de investigar y realizar los metodos relacionados a la api de el traductor y de la fda
 Yurley Tatiana Galeano Gelvez: Se encargo de la logica detras del proyecto
 Jineth Catalina Sanhez Rodriguez: Se encargo d e la interfaz grafica del archivo
+
+Se uso la ayuda de gemini, la inteligencia artificial de google para ayudarse con el proceso de hallar las api
