@@ -5,15 +5,15 @@ import java.awt.event.ActionListener;
 
 public class MainPanelGrafico extends JPanel {
 
-    private JTextField campoNombre;
-    private JButton botonBuscar;
-    private JTextArea areaResultados;
-    private JScrollPane scrollPane;
-    private ControladorApiMed controlador;
+    private JTextField campoNombre;         //campo de texto para el nombre del medicamento
+    private JButton botonBuscar;            //boton para iniciar la busqueda
+    private JTextArea areaResultados;       //area de texto para mostrar los resultados
+    private JScrollPane scrollPane;         //scroll pane para el area de resultados
+    private ControladorApiMed controlador;  //controlador para manejar la logica de la aplicacion
 
     public MainPanelGrafico() {
         // Inicializar el controlador con la API de medicamentos
-        ServicioApi api = new ApiMedicamentos();
+        ServicioApi api = new ApiMedicamentos();        //crea una instancia de ApiMedicamentos que implementa ServicioApi
         controlador = new ControladorApiMed(api);
 
         // Configurar el layout del panel
@@ -37,7 +37,7 @@ public class MainPanelGrafico extends JPanel {
         add(scrollPane, BorderLayout.CENTER);
 
         // Agregar listener al botón
-        botonBuscar.addActionListener(new ActionListener() {
+        botonBuscar.addActionListener(new ActionListener() {        //cuando se presiona el boton, llama al metodo buscarMedicamento
             @Override
             public void actionPerformed(ActionEvent e) {
                 buscarMedicamento();
@@ -46,18 +46,18 @@ public class MainPanelGrafico extends JPanel {
     }
 
     private void buscarMedicamento() {
-        String nombre = campoNombre.getText().trim();
+        String nombre = campoNombre.getText().trim();       //obtiene el nombre del medicamento ingresado
         if (nombre.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, ingrese el nombre del medicamento.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         try {
-            Medicamento medicamento = controlador.buscar(nombre);
-            String resultados = "Medicamento: " + medicamento.getNombre() + "\n\nEfectos secundarios:\n" + medicamento.getEfectos();
-            areaResultados.setText(resultados);
+            Medicamento medicamento = controlador.buscar(nombre);       //usa el controlador para buscar el medicamento
+            String resultados = "Medicamento: " + medicamento.getNombre() + "\n\nEfectos secundarios:\n" + medicamento.getEfectos();    //prepara el texto con los resultados, llamando al metodo getNombre y getEfectos
+            areaResultados.setText(resultados);     //muestra los resultados en el area de texto
         } catch (Exception ex) {
-            areaResultados.setText("Error al buscar el medicamento: " + ex.getMessage());
+            areaResultados.setText("Error al buscar el medicamento: " + ex.getMessage());   //maneja posibles errores, dado caso se produzca uno
         }
     }
 
