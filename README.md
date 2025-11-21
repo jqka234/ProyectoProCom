@@ -7,3 +7,5 @@ Yurley Tatiana Galeano Gelvez: Se encargo de la logica detras del proyecto
 Jineth Catalina Sanhez Rodriguez: Se encargo d e la interfaz grafica del archivo
 
 Se uso la ayuda de gemini, la inteligencia artificial de google para ayudarse con el proceso de hallar las api
+
+https://www.drugs.com/drug_information.html : Pagina para hallar los nombres de los medicamentos en ingles :=)
